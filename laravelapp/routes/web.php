@@ -10,7 +10,7 @@ Route::get('hello', function () {
 });
 */
 
-Route::get('hello/{msg}', function ($msg) {
+Route::get('hello/{msg?}', function ($msg='No message.') {
 
 $html = <<<EOF
 <html>
