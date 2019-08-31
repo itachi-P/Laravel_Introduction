@@ -12,7 +12,6 @@
   <p>{{$msg}}</p>
   <form method="POST" action="/hello">
     {{ csrf_field() }}
-    {!! "<h2>HTMLエスケープ処理されない書き方</h2>" !!}
     <input type="text" name="msg">
     <input type="submit">
   </form>
