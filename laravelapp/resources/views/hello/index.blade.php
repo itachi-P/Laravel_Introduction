@@ -9,11 +9,17 @@
 </head>
 <body>
   <h1>Blade/Index</h1>
-  <p>foreachディレクティブの例</p>
+  <p>&#064;forディレクティブの例</p>
   <ol>
-  @foreach($data as $item)
-  <li>{{$item}}
-  @endforeach
+  @for($i = 1; $i < 100; $i++)
+    @if ($i % 2 == 1)
+      @continue <!-- 奇数の場合は以下の処理に進まず即座にインクリメント($i++) -->
+    @elseif ($i <= 10)
+      <li>No, {{$i}}  <!-- 偶数かつ10以下の場合のみ表示 -->
+    @else
+      @break
+    @endif
+  @endfor
   </ol>
 </body>
 </html>
