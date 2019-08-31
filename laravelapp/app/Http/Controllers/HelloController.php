@@ -10,24 +10,35 @@ class HelloController extends Controller
     public function index(Request $request, Response $response) {
 
         $html = <<<EOF
-        <html>
-        <head>
-        <title>Hello/Index</title>
-        <style>
-        body {font-size:16pt; color:#999; }
-        h1 {font-size:120pt; text-align:right; color:#fafafa;
-            margin:-50px 0px -120px 0px; }
-        </style>
-        </head>
-        <body>
-            <h1>Hello</h1>
-            <h3>Request</h3>
-            <pre>{$request}</pre>
-            <h3>Response</h3>
-            <pre>{$response}</pre>
-        </body>
-        </html>
-        EOF;
+<html>
+<head>
+<title>Hello/Index</title>
+<style>
+body {font-size:16pt; color:#999; }
+h1 {font-size:120pt; text-align:right; color:#fafafa;
+    margin:-50px 0px -120px 0px; }
+</style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h3>Request</h3>
+    <pre>{$request}</pre>
+    <h3>Response</h3>
+    <pre>{$response}</pre>
+    <ul>
+        Request
+        <li>URL:{$request->url()}</li>
+        <li>fullURL:{$request->fullUrl()}</li>
+        <li>PATH:{$request->path()}</li>
+        Response
+        <li>status:{$response->status()}</li>
+        <li>content:{$response->content()}</li>
+        <li>setContent:{$response->setContent("hoge")}</li>
+        <li>content:{$response->content()}</li>
+    </ul>
+</body>
+</html>
+EOF;
 
         $response->setContent($html);
         return $response;

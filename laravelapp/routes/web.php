@@ -10,6 +10,9 @@ Route::get('hello', function () {
 });
 */
 
-Route::get('hello', 'HelloController@index');
+//Route::get('hello', 'HelloController@index');
+Route::get('hello', function() {
+    return view('hello.index'); # view/以下のhelloフォルダのindex.php
+});
 Route::get('singleaction', 'SingleActionController');
 
