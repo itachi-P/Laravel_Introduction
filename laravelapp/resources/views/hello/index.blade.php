@@ -11,15 +11,14 @@
   <h1>Blade/Index</h1>
   <p>&#064;forディレクティブの例</p>
   <ol>
-  @for($i = 1; $i < 100; $i++)
-    @if ($i % 2 == 1)
-      @continue <!-- 奇数の場合は以下の処理に進まず即座にインクリメント($i++) -->
-    @elseif ($i <= 10)
-      <li>No, {{$i}}  <!-- 偶数かつ10以下の場合のみ表示 -->
-    @else
-      @break
+  @foreach ($data as $item)
+    @if ($loop->first)
+      <p>※データ一覧</p><ul>
     @endif
-  @endfor
-  </ol>
+    <li>No, {{$loop->iteration}} . {{$item}}</li>
+    @if ($loop->last)
+      </ul><p>----ここまで</p>
+    @endif
+  @endforeach
 </body>
 </html>
