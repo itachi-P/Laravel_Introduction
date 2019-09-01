@@ -12,7 +12,7 @@ class HelloController extends Controller
         $data = [
             ['name'=>'山田たろ〜', 'mail'=>'taro@yamada'],
             ['name'=>'田中はなこ', 'mail'=>'hanako@flower'],
-            ['name'=>'鈴木サチコ', 'mail'=>'sachico@happy'],
+            ['name'=>'鈴木サチコ', 'mail'=>'sachico@happy-girl'],
             ['name'=>'スパ石井たまこ', 'mail'=>'tamako@spicy']
         ];
         return view('hello.index', ['data'=>$data]);
