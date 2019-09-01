@@ -21,7 +21,7 @@
       これはメッセージの表示です。
     @endslot    
   @endcomponent
-  
+
 @endsection
 
 @section('footer')
