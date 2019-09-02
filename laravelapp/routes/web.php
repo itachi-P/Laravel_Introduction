@@ -6,5 +6,5 @@ Route::get('/', function () {
 });
 
 Route::get('hello', 'HelloController@index')
-    ->middleware(HelloMiddleware::class);
+    ->middleware('helo');
 Route::post('hello', 'HelloController@post');
