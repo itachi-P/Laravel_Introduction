@@ -7,7 +7,8 @@
   インデックスページ
 @endsection
 
-@section('content')    
+@section('content')
+    <!-- 投稿を1つ以上持つ人のリスト　-->
     <table>
         <tr><th>Person</th><th>Board</th></tr>
         @foreach ($hasItems as $item)
@@ -24,6 +25,7 @@
         @endforeach
     </table>
     <div style="margin:10px;"></div>
+    <!-- 投稿を1つも持たない人のリスト -->
     <table>
         <tr><th>Person</th></tr>
         @foreach ($noItems as $item)
