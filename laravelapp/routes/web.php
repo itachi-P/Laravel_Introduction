@@ -38,6 +38,11 @@ Route::get('hello/rest', 'HelloController@rest');
 # Session
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_put');
+
+# User Authentication
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
