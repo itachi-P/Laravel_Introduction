@@ -18,6 +18,7 @@ class HelloTest extends TestCase
         $response = $this->get('/hello');
         $response->assertStatus(302);
 
+        // Illuminate\Database\QueryException: Database (database\database_test.sqlite) does not exist.
         $user = factory(User::class)->create();
         $response = $this->actingAs($user)->get('/hello');
         $response->assertStatus(200);
