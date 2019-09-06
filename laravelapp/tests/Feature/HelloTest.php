@@ -7,10 +7,17 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class HelloTest extends TestCase
 {
-    public function testExample()
+    public function testHello()
     {
-        $response = $this->get('/');
+        $this->assertTrue(true);
+        
+        $arr = [];
+        $this->assertEmpty($arr);
 
-        $response->assertStatus(200);
+        $msg = "Hello.";
+        $this->assertEquals('Hello.', $msg);
+
+        $n = random_int(0, 100);
+        $this->assertLessThan(100, $n);
     }
 }
