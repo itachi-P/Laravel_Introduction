@@ -2,11 +2,12 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ExampleTest extends TestCase
+class HelloTest extends TestCase
 {
-    public function testBasicTest()
+    public function testExample()
     {
         $response = $this->get('/');
 
