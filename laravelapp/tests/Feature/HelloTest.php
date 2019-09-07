@@ -2,12 +2,15 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\User;
 
 class HelloTest extends TestCase
 {    
+    use DatabaseMigrations;
+
     public function testHello()
     {
         $this->assertTrue(true);
