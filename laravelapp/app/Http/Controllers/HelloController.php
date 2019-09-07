@@ -30,7 +30,6 @@ class HelloController extends Controller
     {
         return view('hello.add');
     }
-
     public function create(Request $request)
     {
         $param = [
@@ -49,7 +48,6 @@ class HelloController extends Controller
             ->where('id', $request->id)->first();
         return view('hello.edit', ['form' => $item]);
     }
-
     public function update(Request $request)
     {
         $param = [
@@ -70,7 +68,6 @@ class HelloController extends Controller
             ->where('id', $request->id)->first();
         return view('hello/del', ['form' => $item]);
     }
-
     public function remove(Request $request)
     {
         DB::table('people')
@@ -98,7 +95,6 @@ class HelloController extends Controller
         $sesdata = $request->session()->get('msg');
         return view('hello.session', ['session_data' => $sesdata]);
     }
-
     public function ses_put(Request $request)
     {
         $msg = $request->input;
