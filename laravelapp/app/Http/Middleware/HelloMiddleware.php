@@ -8,7 +8,7 @@ class HelloMiddleware
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        $content = $response -> content ( ) ;
+        $content = $response->content() ;
         
         # 正規表現による置換でHTML中の<middlewara>タグの中身からリンクを自動生成する
         $pattern = '/<middleware>(.*)<\/middleware>/i';
