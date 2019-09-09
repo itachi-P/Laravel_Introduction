@@ -19,7 +19,6 @@ class PersonController extends Controller
     {
         return view('person.find', ['input' => '']);
     }
-    
     public function search(Request $request)
     {
         $min = $request->input * 1;
@@ -33,7 +32,6 @@ class PersonController extends Controller
     {
         return view('person.add');
     }
-
     public function create(Request $request)
     {
         $this->validate($request, Person::$rules);
@@ -49,7 +47,6 @@ class PersonController extends Controller
         $person = Person::find($request->id);
         return view('person.edit', ['form' => $person]);
     }
-
     public function update(Request $request)
     {
         $this->validate($request, Person::$rules);
@@ -65,7 +62,6 @@ class PersonController extends Controller
         $person = Person::find($request->id);
         return view('person.del', ['form' => $person]);
     }
-
     public function remove(Request $request)
     {
         Person::find($request->id)->delete();
